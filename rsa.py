@@ -3,7 +3,7 @@ from Crypto.Cipher import PKCS1_OAEP
 
 class Rsa:
     def __init__(self):
-        self.keyPair = RSA.generate(3072) #tam da chave rs em bites
+        self.keyPair = RSA.generate(3072)
 
     def createPublicKey(self):
         pubKey = self.keyPair.publickey()
@@ -18,7 +18,7 @@ class Rsa:
         encrypted = encryptor.encrypt(msg)
         return encrypted
 
-    def decript(self, encrypted, privkey):
+    def decript(self, encrypted,privkey):
         decryptor = PKCS1_OAEP.new(self.keyPair)
         decrypted = decryptor.decrypt(encrypted)
         return decrypted

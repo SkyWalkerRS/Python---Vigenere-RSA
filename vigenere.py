@@ -1,9 +1,11 @@
 class Vigenere:
 
-    def encrypt(self, plaintext, password, decrypt=False):
+    def encrypt(self, plaintext, password):
         key_length = len(password)
         key_as_int = [ord(i) for i in password]
+        #print(key_as_int)
         plaintext_int = [ord(i) for i in plaintext]
+        #print(plaintext_int)
 
         while 32 in plaintext_int:
             plaintext_int.remove(32)
